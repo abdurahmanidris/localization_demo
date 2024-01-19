@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:localization_demo/classes/language.dart';
+import 'package:localization_demo/classes/language_constatnts.dart';
+import 'package:localization_demo/main.dart';
+import 'package:localization_demo/router/route_constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // title: Text(AppLocalizations.of(context)!.homePage),
         title: Text(translation(context).homePage),
         actions: <Widget>[
           Padding(

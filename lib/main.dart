@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
+
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:localization_demo/classes/language_constatnts.dart';
+import 'package:localization_demo/router/custom_router.dart';
+import 'package:localization_demo/router/route_constants.dart';
 
 final FlutterLocalization localization = FlutterLocalization.instance;
 
@@ -40,12 +47,20 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+          color: Colors
+              .green, //<---Set the desired color here like my branding color #000132
+        ),
       ),
+      /*theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),*/
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      // locale: Locale('en', ''),
+      locale: _locale,
       onGenerateRoute: CustomRouter.generatedRoute,
       initialRoute: homeRoute,
-      locale: _locale,
     );
   }
 }
